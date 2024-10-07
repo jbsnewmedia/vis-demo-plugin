@@ -17,17 +17,17 @@ class DemoController extends VisAbstractController
     public function dashboard(): Response
     {
         $this->vis->setTool('demo');
-        $this->vis->setRoute('demo', 'dashboard');
+        $this->vis->setRoute('demo', 'vis_demo_dashboard');
 
         return $this->render('@VisBundle/tool/dashboard.html.twig', [
             'vis' => $this->vis,
         ]);
     }
 
-    public function user(): Response
+    public function tableDatatable(): Response
     {
         $this->vis->setTool('demo');
-        $this->vis->setRoute('demo', 'vis-vis2-user2');
+        $this->vis->setRoute('demo', 'vis_demo_table_datatable');
 
         return $this->render('@VisBundle/tool/dashboard.html.twig', [
             'vis' => $this->vis,

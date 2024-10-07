@@ -32,37 +32,22 @@ class DemoPlugin extends AbstractPlugin
         $item->addRole('ROLE_VIS_DEMO');
         $this->vis->addSidebar($item);
 
-        $item = new SidebarItem('demo', 'dashboard', 'Dashboard', 'vis_demo_dashboard');
+        $item = new SidebarItem('demo', 'vis_demo_dashboard', 'Dashboard', 'vis_demo_dashboard');
         $item->generateIcon('fa-fw fa-solid fa-house');
-        $item->generateBadge('Error', 'danger');
+        //$item->generateBadge('Error', 'danger');
+        //$item->generateCounter('5', 'secondary');
+        $item->addRole('ROLE_VIS_DEMO');
+        $this->vis->addSidebar($item);
+
+        $item = new SidebarItem('demo', 'vis_demo_table', 'Table');
+        $item->generateIcon('fa-fw fa-solid fa-database');
+        $item->addRole('ROLE_VIS_DEMO');
+        $this->vis->addSidebar($item);
+
+        $item = new SidebarItem('demo', 'vis_demo_table_datatable', 'Datatable', 'vis_demo_table_datatable');
+       // $item->generateBadge('Error', 'danger');
         $item->generateCounter('5', 'secondary');
-        $item->addRole('ROLE_VIS_DEMO');
-        $this->vis->addSidebar($item);
-
-        $item = new SidebarItem('demo', 'vis', 'Vis');
-        $item->generateIcon('fa-fw fa-solid fa-house');
-        $item->addRole('ROLE_VIS_DEMO');
-        $this->vis->addSidebar($item);
-
-        $item = new SidebarItem('demo', 'user', 'User', 'vis_demo_user');
-        $item->generateIcon('fa-fw fa-solid fa-house');
-        $item->generateBadge('Error', 'danger');
-        $item->generateCounter('5', 'secondary');
-        $item->setParent('vis');
-        $item->addRole('ROLE_VIS_DEMO');
-        $this->vis->addSidebar($item);
-
-        $item = new SidebarItem('demo', 'vis2', 'Vis2', 'vis_demo_user');
-        $item->generateIcon('fa-fw fa-solid fa-house');
-        $item->setParent('vis');
-        $item->addRole('ROLE_VIS_DEMO');
-        $this->vis->addSidebar($item);
-
-        $item = new SidebarItem('demo', 'user2', 'User2', 'vis_demo_user');
-        $item->generateIcon('fa-fw fa-solid fa-house');
-        $item->generateBadge('Error', 'danger');
-        $item->generateCounter('5', 'secondary');
-        $item->setParent('vis-vis2');
+        $item->setParent('vis_demo_table');
         $item->addRole('ROLE_VIS_DEMO');
         $this->vis->addSidebar($item);
     }
