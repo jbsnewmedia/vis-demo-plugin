@@ -1,0 +1,21 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    JBSNewMedia\VisDemoPlugin\:
+        resource: '../src/'
+        exclude:
+            - '../../DependencyInjection/'
+            - '../../Entity/'
+            - '../../Kernel.php'
+        tags: [ 'controller.service_arguments' ]
+
+    JBSNewMedia\VisDemoPlugin\Controller\DemoController:
+        arguments:
+            $vis: '@JBSNewMedia\VisBundle\Service\Vis'
+        tags: ['controller.service_arguments']
+
+    JBSNewMedia\VisDemoPlugin\Plugin\DemoPlugin:
+        tags:
+            - { name: 'vis.plugin' }
