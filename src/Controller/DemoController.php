@@ -130,6 +130,7 @@ class DemoController extends VisAbstractController
             ['name'=>'ID', 'sortable'=>true, 'id'=>'id', 'hidden'=>true],
             ['name'=>'Alter', 'id'=>'age'],
             ['name'=>'Stadt', 'sortable'=>true, 'id'=>'city'],
+            ['name'=>'Options', 'raw'=>true, 'id'=>'options', 'class'=>'avalynx-datatable-options'],
         ];
 
         if (isset($_POST['sorting'])) {
@@ -210,7 +211,8 @@ class DemoController extends VisAbstractController
             $params[':offset'] = ($result['page'] - 1) * $result['perpage'];
             $stmt->execute($params);
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-                $result['data'][]=['data' => $row, 'config' => ['test' => 'test_text']];
+                $row['options'] = '<a class="btn btn-sm btn-primary" title="Edit details">asdsd</a> <a class="btn btn-sm btn-primary" title="Edit details">asdsd</a> <a class="btn btn-sm btn-primary" title="Edit details">asdsd</a>';
+                $result['data'][]=['data' => $row, 'config' => ['test' => 'test_text'], 'class'=>'', 'data_class'=>['options'=>'table-danger']];
             }
         } catch (\PDOException $e) {
             $result['error']=$e->getMessage();
