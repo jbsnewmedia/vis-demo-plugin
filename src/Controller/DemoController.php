@@ -20,7 +20,7 @@ class DemoController extends VisAbstractController
         $this->vis->setTool('demo');
         $this->vis->setRoute('demo', 'vis_demo_dashboard');
 
-        return $this->render('@VisBundle/tool/dashboard.html.twig', [
+        return $this->render('@Vis/tool/dashboard.html.twig', [
             'vis' => $this->vis,
         ]);
     }
@@ -30,7 +30,7 @@ class DemoController extends VisAbstractController
         $this->vis->setTool('demo');
         $this->vis->setRoute('demo', 'vis_demo_table_datatable');
 
-        return $this->render('@VisBundle/content/datatable.html.twig', [
+        return $this->render('@Vis/content/datatable.html.twig', [
             'vis' => $this->vis,
         ]);
     }
